@@ -1,0 +1,28 @@
+@import '~antd/dist/antd.css';
+@import './components/globals/global.styling.scss';
+
+.main-root {
+    margin: 1rem;
+    height: 100%;
+    @include round-bordered-container;
+}
+
+header{
+    @include round-bordered-container;
+    background: $color-header-background;
+
+    color: black;
+
+     span{
+         font-size: 1.75rem; 
+
+     }
+     :first-child{
+      
+        font-weight: 900;
+    }
+    img{
+        width: 4rem;
+    }
+     
+}
