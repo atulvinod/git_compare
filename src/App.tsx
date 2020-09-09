@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.scss';
-import { SearchBar } from './components/search_bar/search_bar.component';
+import  SearchBar  from './components/search_bar/search_bar.component';
 import logo from './assets/git_icon.png';
-import { UsersGrid } from './components/users_grid/users_grid.component';
+import  UsersGrid  from './components/users_grid/users_grid.component';
+
 function App() {
   return (
     <div className="main-root">
@@ -11,7 +12,7 @@ function App() {
 
       </header>
       <main>
-        <SearchBar />
+        <SearchBar ></SearchBar>
       </main>
       <div className="container margin-top-medium">
       
