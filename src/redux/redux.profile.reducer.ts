@@ -16,9 +16,9 @@ const profileReduce = (state:state = INITIAL_STATE, action: any) => {
             }
 
         case profileActions.REMOVE_PROFILE:
+            let profiles = state.profiles.filter(value=>value['id']!==action.payload);
             return {
-                ...state,
-                
+                profiles   
             }
 
         default:

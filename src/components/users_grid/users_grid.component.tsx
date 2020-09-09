@@ -1,15 +1,16 @@
 import React from 'react';
 import './users_grid.style.scss';
 import {Row, Col} from 'antd';
-import { UserCard } from '../user_card/users_card.component';
+import  UserCard  from '../user_card/users_card.component';
 import {connect} from 'react-redux';
 import {state} from '../../redux/redux.schema'
+import {withRouter} from 'react-router-dom';
+
 
 const getRating = (profileData:any)=>{
     let {public_gists,public_repos,followers,following} = profileData
     return (3*Number(followers) - 1.5*Number(following)) + 0.5*Number(public_repos) + 0.75*Number(public_gists);
 }
-
 
 const UsersGrid = (props:any)=>{
     
@@ -46,4 +47,4 @@ const UsersGrid = (props:any)=>{
 const mapStateToProps = (State:state)=>({
     profiles :State.profiles
 })
-export default connect(mapStateToProps)(UsersGrid);
+export default withRouter(connect(mapStateToProps)(UsersGrid));

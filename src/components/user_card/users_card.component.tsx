@@ -2,12 +2,14 @@ import React from 'react';
 import './users_card.style.scss';
 import { Card, Image, Row, Col, Button } from 'antd';
 import {  GithubFilled, SmileFilled } from '@ant-design/icons';
+import {connect} from 'react-redux';
+import {removeProfile} from '../../redux/redux.profile.actions';
 
-
-
-export const UserCard = (props: any) => {
-    let { user, index } = props;
-
+const UserCard = (props: any) => {
+    let { user, index ,removeProfile} = props;
+    const deleteMe = ()=>{
+        removeProfile(user['id']);
+    }
     return (
         <div className="site-card-border-less-wrapper">
             <Card bordered={true} style={{ width: 300, position: 'relative' }}>
@@ -64,12 +66,14 @@ export const UserCard = (props: any) => {
                 <div className="text-align-center margin-top-medium">
 
 
-                    <Button type="primary" danger style={{ width: '100%' }}>
+                    <Button type="primary" danger style={{ width: '100%' }} 
+                    onClick={deleteMe}
+                    >
                         Remove
                       </Button>
                     <br />
                     <div className="margin-top-medium">
-                        <a href={user['html_url']} target="_blank">
+                        <a href={user['html_url']} target="_blank"  rel="noopener noreferrer">
                             <GithubFilled style={{ fontSize: '2.5rem' }} />
                         </a>
                     </div>
@@ -80,3 +84,7 @@ export const UserCard = (props: any) => {
         </div>
     );
 }
+const mapPropsToState = (dispatch:any)=>({
+    removeProfile : (value:any)=>dispatch(removeProfile(value)),
+})
+export default connect(null,mapPropsToState)(UserCard)
