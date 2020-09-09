@@ -11,6 +11,7 @@ const UserCard = (props: any) => {
         removeProfile(user['id']);
     }
     return (
+        user['message']==undefined ?
         <div className="site-card-border-less-wrapper">
             <Card bordered={true} style={{ width: 300, position: 'relative' }}>
 
@@ -82,6 +83,11 @@ const UserCard = (props: any) => {
                 </div>
             </Card>
         </div>
+        :<Card bordered={true} style={{ width: 300, position: 'relative' ,display:'flex', justifyItems:'center',alignItems:'center'}} >
+            <p style={{color:'red'}}>One of the users does not exist</p>
+        </Card>
+
+
     );
 }
 const mapPropsToState = (dispatch:any)=>({
