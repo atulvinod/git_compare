@@ -1,0 +1,31 @@
+@import '../globals/global.styling.scss';
+.round{
+    img{
+        border-radius: 50%;
+    }
+}
+.starIcon{
+    font-size:2rem;
+    color: yellow;
+}
+.gitIcon{
+    font-size:2rem;
+
+
+}
+.smileIcon{
+    font-size:2rem;
+
+    color: blue;
+}
+.section{
+    font-size:1.2rem;
+    margin-top: 0.5rem;
+}
+.align-icon{
+    display: flex;
+    align-items: center;
+    span{
+        margin-right: 0.5rem;
+    }
+}
