@@ -11,7 +11,7 @@ const UserCard = (props: any) => {
         removeProfile(user['id']);
     }
     return (
-        user['message']==undefined ?
+        user['message']===undefined ?
         <div className="site-card-border-less-wrapper">
             <Card bordered={true} style={{ width: 300, position: 'relative' }}>
 

@@ -8,7 +8,7 @@ import {withRouter} from 'react-router-dom';
 
 
 const getRating = (profileData:any)=>{
-    if(profileData['message']!=undefined){
+    if(profileData['message']!==undefined){
         return Number.MIN_VALUE;
     }
     let {public_gists,public_repos,followers,following} = profileData
